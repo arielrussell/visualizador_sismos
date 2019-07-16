@@ -50,10 +50,26 @@
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade show active" id="mapas">
+                      <p>Se muestran los todos los eventos sísmicos medidos en por el Centro Sismológico Nacional desde el 2012 hasta el presente.</br>
+                      El tamaño de los círculo representa la magnitud, mientras que el color la profundidad</p>
+                      <div class="intro">
+                            <div id="myMap"></div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="graficos">
+                      <p>El primer gráfico muestran todos los eventos sísmicos medidos en por el Centro Sismológico Nacional desde el 2012 hasta el presente (11 de julio de 2019).</br>
+                        El tamaño de los círculo representa la magnitud, mientras que el color la profundidad</p>
+                        <div style="width: 100%; height: 100%;">
+                          <canvas id="myChart" style="width: 100%; height: auto;"></canvas>
+                        </div>
                       </div>
                       <div class="tab-pane fade" id="video">
+                        <p>video video video video</p>
+                        <div style="width: 100%; height: 100%;">
+                          <iframe style="width: 100%; height: 550px;" src="https://www.youtube.com/embed/jhmF-IwP6uM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                          </iframe>
+                        </div>
+
                         </div>
                     <div id="js-legend" class="chart-legend"></div>
                     </div>
@@ -70,6 +86,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script src="mapa.js"></script>
+    <script src="graph.js"></script>
+    
 </body>
 </html>
 
