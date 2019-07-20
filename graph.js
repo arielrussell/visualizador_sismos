@@ -14,6 +14,9 @@ $.getJSON("sismos_chile.geojson", function (json) {
     lat = info.features.map(function (campo) {
         return campo.properties.lat;
     });
+    long = info.features.map(function (campo) {
+        return campo.properties.long;
+    });
     col_exterior = info.features.map(function (campo) {
         var color_ext = 
         (campo.properties.profundidad < 25) ? '#d7191c' : (
@@ -59,8 +62,11 @@ $.getJSON("sismos_chile.geojson", function (json) {
         return 'rgba(' + r + ',' + g + ',' + b + ',' + 0.3 + ')';
     });    
 
+//     for(var i = 0, largo = date.length, datos = []; i < largo; i++) datos.push({
+//         x: Date.parse(date[i]), y: lat[i], r: mag[i]
+//     }); 
     for(var i = 0, largo = date.length, datos = []; i < largo; i++) datos.push({
-        x: Date.parse(date[i]), y: lat[i], r: mag[i]
+        x: long[i], y: prof[i], r: mag[i]
     }); 
 
     var myChart = new Chart(ctx, {
@@ -72,18 +78,18 @@ $.getJSON("sismos_chile.geojson", function (json) {
         },
         options: {
             legend: false,
-            scales: {
-                xAxes: [{
-                    type: 'time',
-                    time: {
-                        parser: 'YYYY-MM-DD',
-                        unit: 'year',
-                        displayFormats: {
-                           day: 'ddd'
-                        },
-                    }
-                }]
-            },
+//             scales: {
+//                 xAxes: [{
+//                     type: 'time',
+//                     time: {
+//                         parser: 'YYYY-MM-DD',
+//                         unit: 'year',
+//                         displayFormats: {
+//                            day: 'ddd'
+//                         },
+//                     }
+//                 }]
+//             },
             elements: {
                 point: {
                     backgroundColor: col_interior,
