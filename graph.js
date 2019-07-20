@@ -15,7 +15,7 @@ $.getJSON("sismos_chile.geojson", function (json) {
         return campo.properties.lat;
     });
     long = info.features.map(function (campo) {
-        return campo.properties.long;
+        return (campo.properties.long)*(-1);
     });
     col_exterior = info.features.map(function (campo) {
         var color_ext = 
